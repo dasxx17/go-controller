@@ -15,8 +15,11 @@ To start the controller, run:
 * `make run`
 
 ## Verification
+To apply the CRD, run:
+* `make apply-crd`
+
 To apply the sample resource, run:
-* `make apply`
+* `make apply-sample`
 
 To port-forward the deployment, run:
 * `make port-forward`
@@ -31,7 +34,7 @@ To test a sample GET, run:
 * `make get-test`
 
 ### Updating
-Feel free to update the values in the sample CRD file `sample-myappresource.yaml` and rerun `make apply`
+Feel free to update the values in the sample CRD file `sample-myappresource.yaml` and rerun `make apply-sample`
 
 ## Cleanup
 To delete the resources, run:

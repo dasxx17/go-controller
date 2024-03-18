@@ -188,8 +188,12 @@ golangci-lint: $(GOLANGCI_LINT) ## Download golangci-lint locally if necessary.
 $(GOLANGCI_LINT): $(LOCALBIN)
 	$(call go-install-tool,$(GOLANGCI_LINT),github.com/golangci/golangci-lint/cmd/golangci-lint,${GOLANGCI_LINT_VERSION})
 
+.PHONY: apply-crd
+apply-crd:
+	kubectl apply -f config/crd/bases/my.api.group_myappresources.yaml
+
 .PHONY: apply
-apply:
+apply-sample:
 	kubectl apply -f sample-myappresource.yaml
 
 .PHONY: port-forward
