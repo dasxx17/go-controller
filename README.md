@@ -11,13 +11,13 @@ Any local kube cluster deployment mechanism can be used for setup.  To create th
 2. Create the cluster by running `minikube start`
 
 ## Compilation
+To apply the CRD, run:
+* `make apply-crd`
+
 To start the controller, run:
 * `make run`
 
 ## Verification
-To apply the CRD, run:
-* `make apply-crd`
-
 To apply the sample resource, run:
 * `make apply-sample`
 
