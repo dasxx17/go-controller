@@ -152,15 +152,15 @@ func (r *MyAppResourceReconciler) Reconcile(ctx context.Context, req ctrl.Reques
 
 	} else if myAppResource.Spec.Redis.Enabled == false {
 		err = r.Delete(ctx, redisDeployment)
-		if err != nil {
+		if err != nil && errors.IsNotFound(err) != true {
 			return ctrl.Result{}, err
 		}
 		err = r.Delete(ctx, redisService)
-		if err != nil {
+		if err != nil && errors.IsNotFound(err) != true {
 			return ctrl.Result{}, err
 		}
 		err = r.Delete(ctx, redisConfigMap)
-		if err != nil {
+		if err != nil && errors.IsNotFound(err) != true {
 			return ctrl.Result{}, err
 		}
 	}
