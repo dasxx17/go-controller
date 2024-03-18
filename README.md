@@ -3,6 +3,7 @@
 ## Prerequisites
 1. Kubernetes Cluster
 2. Go (tested on v1.22.1)
+3. kubectl
 
 ## Example Kubernetes Cluster Setup with minikube
 Any local kube cluster deployment mechanism can be used for setup.  To create the cluster using minikube, following the steps below:
